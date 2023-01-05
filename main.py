@@ -28,11 +28,7 @@ with st.sidebar:
         st.markdown("""[Davinci](https://beta.openai.com/docs/models/davinci)を基づいてファインディングした志望動機生成用のモデルです。
 
         """)
-#    else:
-#        st.markdown("""[Ada](https://beta.openai.com/docs/models/ada) is usually the fastest model and can perform tasks like parsing text, address 
-#        correction and certain kinds of classification tasks that don't require too much nuance. 
-#        da's performance can often be improved by providing more context.
-#        """)
+
 
     max_tokens = st.text_input("トークンの長さ:", "499")
     st.markdown("**重要:** 長すぎるとモデルの効果が悪くなるので、ご注意を！")
@@ -55,7 +51,6 @@ with st.form(key='my_form_to_submit'):
 
     submit_button = st.form_submit_button(label='提出する')
 
-#prompt1 = ("Write a cover letter to " + " from " + your_name +" for a " + role + " job at " + company_name +"." + " I have experience in " +personal_exp + " I am excited about the job because " +job_desc + " I am passionate about "+ passion)
 if model_used == '自己ｐｒ':
     prompt = (self_pr + "に関する自己ｐｒを詳しく書いてください。")
 if model_used == '学力':
@@ -117,7 +112,7 @@ if submit_button:
     st.write(text)
     st.download_button(label='ダウンロード', file_name='entry_sheet.txt', data=text)
 
-    #print("Other results:", response)
+
 
     with open('entry_sheet.txt', 'a') as f:
         f.write(text)
