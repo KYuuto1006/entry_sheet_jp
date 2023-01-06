@@ -3,7 +3,7 @@ import json
 import streamlit as st
 
 print("** Loading API Key")
-ai.api_key = "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" #prepare your own openAI API Key
+ai.api_key = " " #prepare your own openAI API Key
 
 st.title("エントリーシート生成")
 st.markdown("情報を入力してください。")
